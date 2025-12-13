@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
 import { StatBadge } from "@/components/StatBadge";
 import { HowItWorksStep } from "@/components/HowItWorksStep";
-import heroCharacters from "@/assets/hero-characters.png";
+import heroVideo from "@/assets/hero-characters.mp4";
 import { 
   Flame, 
   Trophy, 
@@ -98,11 +98,14 @@ const Index = () => {
                   </span>
                 </div>
                 
-                {/* Characters */}
-                <img 
-                  src={heroCharacters} 
-                  alt="Dare challenge characters" 
-                  className="relative z-10 w-full max-w-sm lg:max-w-md animate-float drop-shadow-xl"
+                {/* Characters Video */}
+                <video 
+                  src={heroVideo} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="relative z-10 w-full max-w-sm lg:max-w-md drop-shadow-xl rounded-3xl"
                 />
 
                 {/* Floating Elements */}
