@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FeatureCard } from "@/components/FeatureCard";
 import { StatBadge } from "@/components/StatBadge";
@@ -44,7 +45,9 @@ const Index = () => {
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="sm">Features</Button>
             <Button variant="ghost" size="sm">Community</Button>
-            <Button variant="default" size="sm">Join Beta</Button>
+            <Link to="/auth">
+              <Button variant="default" size="sm">Sign In</Button>
+            </Link>
           </div>
         </div>
       </nav>
