@@ -3,6 +3,11 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { StatBadge } from "@/components/StatBadge";
 import { HowItWorksStep } from "@/components/HowItWorksStep";
 import heroVideo from "@/assets/hero-characters.mp4";
+import characterCelebrating from "@/assets/character-celebrating.png";
+import characterThinking from "@/assets/character-thinking.png";
+import characterPointing from "@/assets/character-pointing.png";
+import characterJumping from "@/assets/character-jumping.png";
+import charactersHighfive from "@/assets/characters-highfive.png";
 import { 
   Flame, 
   Trophy, 
@@ -130,13 +135,20 @@ const Index = () => {
       {/* Features Section */}
       <section className="relative z-10 px-6 py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4 opacity-0 animate-fade-in font-extrabold" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
-              Epic <span className="text-primary">Features</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Everything you need to become the ultimate dare legend
-            </p>
+          <div className="flex flex-col lg:flex-row items-center gap-8 mb-16">
+            <img 
+              src={characterCelebrating} 
+              alt="Celebrating character" 
+              className="w-32 h-32 object-contain animate-float"
+            />
+            <div className="text-center lg:text-left">
+              <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4 opacity-0 animate-fade-in font-extrabold" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
+                Epic <span className="text-primary">Features</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl">
+                Everything you need to become the ultimate dare legend
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -183,76 +195,118 @@ const Index = () => {
               delay={700}
             />
           </div>
+          
+          {/* Character decoration */}
+          <div className="flex justify-end mt-8">
+            <img 
+              src={characterThinking} 
+              alt="Thinking character" 
+              className="w-28 h-28 object-contain animate-float"
+              style={{ animationDelay: "0.5s" }}
+            />
+          </div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="relative z-10 px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4 font-extrabold">
-              How It <span className="text-secondary">Works</span>
-            </h2>
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-16">
+            <div className="text-center">
+              <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4 font-extrabold">
+                How It <span className="text-secondary">Works</span>
+              </h2>
+            </div>
+            <img 
+              src={characterPointing} 
+              alt="Pointing character" 
+              className="w-28 h-28 object-contain animate-float"
+            />
           </div>
 
-          <div className="space-y-2">
-            <HowItWorksStep
-              step={1}
-              icon="🎯"
-              title="Browse Dares"
-              description="Explore trending dares, weekly challenges, or create your own. Pick from categories like Fun, Skill, Fitness & more."
-              delay={200}
-            />
-            <HowItWorksStep
-              step={2}
-              icon="⚡"
-              title="Accept & Complete"
-              description="Accept a dare and the countdown begins! Record your attempt and complete before time expires."
-              delay={400}
-            />
-            <HowItWorksStep
-              step={3}
-              icon="🏆"
-              title="Earn & Climb"
-              description="Earn coins, build streaks, unlock achievements, and become the legend of your campus!"
-              delay={600}
-              isLast
-            />
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="space-y-2">
+              <HowItWorksStep
+                step={1}
+                icon="🎯"
+                title="Browse Dares"
+                description="Explore trending dares, weekly challenges, or create your own. Pick from categories like Fun, Skill, Fitness & more."
+                delay={200}
+              />
+              <HowItWorksStep
+                step={2}
+                icon="⚡"
+                title="Accept & Complete"
+                description="Accept a dare and the countdown begins! Record your attempt and complete before time expires."
+                delay={400}
+              />
+              <HowItWorksStep
+                step={3}
+                icon="🏆"
+                title="Earn & Climb"
+                description="Earn coins, build streaks, unlock achievements, and become the legend of your campus!"
+                delay={600}
+                isLast
+              />
+            </div>
+            
+            <div className="flex justify-center">
+              <img 
+                src={charactersHighfive} 
+                alt="Characters high-fiving" 
+                className="w-full max-w-sm rounded-3xl shadow-medium animate-float"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="relative z-10 px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="soft-card p-8 md:p-12 text-center shadow-medium">
-            <div className="flex justify-center mb-6">
-              <div className="flex -space-x-2">
-                {["🔥", "⚡", "💎", "🏆", "✨"].map((emoji, i) => (
-                  <div 
-                    key={i}
-                    className="w-11 h-11 rounded-full bg-muted flex items-center justify-center text-lg border-2 border-background animate-bounce-gentle"
-                    style={{ animationDelay: `${i * 100}ms` }}
-                  >
-                    {emoji}
-                  </div>
-                ))}
+        <div className="max-w-5xl mx-auto">
+          <div className="soft-card p-8 md:p-12 shadow-medium relative overflow-hidden">
+            {/* Background character decorations */}
+            <img 
+              src={characterJumping} 
+              alt="Jumping character" 
+              className="absolute -left-4 -bottom-4 w-32 h-32 object-contain opacity-80 animate-bounce-gentle hidden md:block"
+            />
+            <img 
+              src={characterCelebrating} 
+              alt="Celebrating character" 
+              className="absolute -right-4 -bottom-4 w-32 h-32 object-contain opacity-80 animate-bounce-gentle hidden md:block"
+              style={{ animationDelay: "0.3s" }}
+            />
+            
+            <div className="text-center relative z-10">
+              <div className="flex justify-center mb-6">
+                <div className="flex -space-x-2">
+                  {["🔥", "⚡", "💎", "🏆", "✨"].map((emoji, i) => (
+                    <div 
+                      key={i}
+                      className="w-11 h-11 rounded-full bg-muted flex items-center justify-center text-lg border-2 border-background animate-bounce-gentle"
+                      style={{ animationDelay: `${i * 100}ms` }}
+                    >
+                      {emoji}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4 font-extrabold">
-              Ready to Prove Yourself?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-              Join thousands of dare legends. Start your journey today!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl">
-                <Star className="w-5 h-5" />
-                Join the Beta
-              </Button>
-              <Button variant="soft" size="lg">
-                Learn More
-              </Button>
+              <h2 className="font-display text-2xl md:text-3xl text-foreground mb-4 font-extrabold">
+                Ready to Prove Yourself?
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+                Join thousands of dare legends. Start your journey today!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="hero" size="xl">
+                  <Star className="w-5 h-5" />
+                  Join the Beta
+                </Button>
+                <Button variant="soft" size="lg">
+                  Learn More
+                </Button>
+              </div>
             </div>
           </div>
         </div>
