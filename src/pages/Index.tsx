@@ -105,7 +105,7 @@ const Index = () => {
                   loop 
                   muted 
                   playsInline
-                  className="relative z-10 w-full max-w-sm lg:max-w-md drop-shadow-xl rounded-3xl"
+                  className="relative z-10 w-full max-w-md lg:max-w-xl xl:max-w-2xl drop-shadow-xl rounded-3xl"
                 />
 
                 {/* Floating Elements */}
