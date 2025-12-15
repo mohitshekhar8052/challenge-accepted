@@ -128,6 +128,43 @@
   .animate-slide-up {
     animation: slide-up 0.8s ease-out forwards;
   }
+
+  .animate-scroll-infinite {
+    animation: scroll-infinite 40s linear infinite;
+  }
+
+  .animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .animate-ping-slower {
+    animation: ping-slow 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .animate-ping-slowest {
+    animation: ping-slow 5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  .animate-gradient-flow {
+    animation: gradient-flow 3s linear infinite;
+  }
 }
 
 @keyframes float {
@@ -136,6 +173,15 @@
   }
   50% {
     transform: translateY(-15px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
 
@@ -167,5 +213,48 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ping-slow {
+  75%, 100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
   }
 }
