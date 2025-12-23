@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 97%;
+    --foreground: 25 20% 20%;
+
+    --card: 40 25% 95%;
+    --card-foreground: 25 20% 20%;
+
+    --popover: 40 25% 95%;
+    --popover-foreground: 25 20% 20%;
+
+    --primary: 210 25% 55%;
+    --primary-foreground: 40 30% 97%;
+
+    --secondary: 10 35% 70%;
+    --secondary-foreground: 40 30% 97%;
+
+    --muted: 35 20% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 45 40% 75%;
+    --accent-foreground: 25 20% 20%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 40 30% 97%;
+
+    --border: 35 25% 85%;
+    --input: 35 25% 85%;
+    --ring: 210 25% 55%;
+
+    --radius: 1.25rem;
+
+    /* Custom tokens */
+    --cream: 40 30% 97%;
+    --warm-beige: 35 30% 88%;
+    --dusty-blue: 210 25% 55%;
+    --dusty-rose: 10 35% 70%;
+    --soft-coral: 15 45% 75%;
+    --warm-tan: 30 25% 60%;
+    --soft-yellow: 45 50% 80%;
+
+    --shadow-soft: 0 4px 20px hsl(25 20% 20% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(25 20% 20% / 0.12);
+    --shadow-card: 0 2px 12px hsl(25 20% 20% / 0.06);
+
+    --font-display: 'Nunito', sans-serif;
+    --font-body: 'Quicksand', sans-serif;
+
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 25 20% 20%;
+    --sidebar-primary: 210 25% 55%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 35 20% 90%;
+    --sidebar-accent-foreground: 25 20% 20%;
+    --sidebar-border: 35 25% 85%;
+    --sidebar-ring: 210 25% 55%;
+  }
+
+  .dark {
+    --background: 25 15% 12%;
+    --foreground: 40 25% 95%;
+    --card: 25 15% 15%;
+    --card-foreground: 40 25% 95%;
+    --primary: 210 30% 60%;
+    --primary-foreground: 25 15% 12%;
+    --secondary: 10 30% 65%;
+    --secondary-foreground: 25 15% 12%;
+    --muted: 25 15% 20%;
+    --muted-foreground: 35 15% 60%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .soft-card {
+    @apply bg-card rounded-3xl border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .warm-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .medium-shadow {
+    box-shadow: var(--shadow-medium);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounce-gentle 3s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .animate-scroll-infinite {
+    animation: scroll-infinite 40s linear infinite;
+  }
+
+  .animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .animate-ping-slower {
+    animation: ping-slow 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .animate-ping-slowest {
+    animation: ping-slow 5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  .animate-gradient-flow {
+    animation: gradient-flow 3s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ping-slow {
+  75%, 100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
